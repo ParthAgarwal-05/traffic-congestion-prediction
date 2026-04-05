@@ -1,0 +1,22 @@
+# Environments
+venv/
+.env
+node_modules/
+dist/
+
+# Python
+__pycache__/
+*.pyc
+
+# ML Models & Data
+backend/models/*.joblib
+backend/models/metrics.json
+data/*.csv
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
