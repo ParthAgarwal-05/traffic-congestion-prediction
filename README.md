@@ -52,3 +52,25 @@ The dashboard includes:
 - **Average Traffic Volume per Day:** Shows which days are typically the busiest.
 - **Speed vs Volume Correlation:** A scatter plot showing how speed decreases as traffic volume increases.
 - **Model Performance:** Displays the real-time accuracy of the trained model.
+
+
+
+How to Switch Models
+  The project automatically selects the best-performing model between RandomForest and XGBoost during training. To switch or force a specific model, follow these steps:
+
+   1. Manual Switch: 
+      Open backend/train.py and modify the "Choose best model" section (around line 96).
+       * To force XGBoost: Change to best_model = xgb.
+       * To force RandomForest: Change to best_model = rf.
+
+   2. Retrain the Pipeline: 
+      After making changes, run the training script from the backend directory:
+   1     cd backend
+   2     ../venv/bin/python train.py
+
+   3. Restart the Backend:
+      The backend loads the model at startup. Restart it to apply the changes:
+   1     cd backend
+   2     ../venv/bin/uvicorn main:app --reload --host 0.0.0.0
+
+  Note: If you want to use a completely different model (e.g., Logistic Regression), you would need to import it from sklearn, fit it in train.py, and save it as best_model.joblib.
