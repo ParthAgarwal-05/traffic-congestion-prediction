@@ -11,7 +11,7 @@ __pycache__/
 # ML Models & Data
 backend/models/*.joblib
 backend/models/metrics.json
-data/*.csv
+
 
 # IDEs
 .vscode/
